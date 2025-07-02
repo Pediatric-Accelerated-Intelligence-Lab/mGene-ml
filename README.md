@@ -79,3 +79,25 @@ python FacialImageAnalysisPipeline.py
 ```
 
 To verify everything is installed correctly and the pipeline works end-to-end.
+
+---
+
+## 📚 Citation
+
+If you use and/or refer to this software in your research, please cite the following papers:
+
+- Cerrolaza JJ, Porras AR, Mansoor A, Zhao Q, Summar M, Linguraru MG. *Identification of dysmorphic syndromes using landmark-specific local texture descriptors*. Proceedings - International Symposium on Biomedical Imaging. 2016;2016-June:1080-1083. https://doi.org/10.1109/ISBI.2016.7493453
+
+- Porras AR, Summar M, Linguraru MG. *Objective differential diagnosis of Noonan and Williams-Beuren syndromes in diverse populations using quantitative facial phenotyping*. Mol Genet Genomic Med. 2021;9(5). https://doi.org/10.1002/MGG3.1636
+
+- Porras AR, Bramble MS, Mosema Be Amoti K, et al. *Facial analysis technology for the detection of Down syndrome in the Democratic Republic of the Congo*. Eur J Med Genet. 2021;64(9):104267. https://doi.org/10.1016/J.EJMG.2021.104267
+
+---
+
+## 🪪 License
+
+This work is licensed under a  
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+![License Badge](license-banner.png)  
+![CC BY-NC-SA](cc-by-nc-sa-badge.png)
