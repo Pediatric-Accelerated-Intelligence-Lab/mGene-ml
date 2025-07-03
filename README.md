@@ -1,7 +1,7 @@
 
 # Facial Image Analysis Pipeline
 
-This repository contains a modular pipeline for facial image preprocessing, feature extraction, and classification, along with tools for visualizing appearance features and generating average facial representations.
+This repository contains a modular pipeline for facial image preprocessing, feature extraction, and classification, along with tools for visualizing appearance features and generating average facial represnetations.
 
 ---
 
@@ -80,7 +80,7 @@ The following Python packages are required:
 |--------------------|---------------------|----------------------------------|
 | `numpy`            | ≥ 1.19              | Matrix and array operations      |
 | `opencv-python`    | ≥ 4.5               | Image processing                 |
-| `scikit-learn`     | ≥ 0.22              | LDA, cross-validation, SVM       |
+| `scikit-learn`     | ≥ 0.22              | Cross-validation, SVM       |
 | `scipy`            | ≥ 1.4               | Statistical tests (Mann-Whitney) |
 | `pandas`           | ≥ 1.0               | Exporting results to Excel       |
 | `openpyxl`         | ≥ 3.0               | Excel writing support            |
@@ -150,10 +150,13 @@ If you use and/or refer to this software in your research, please cite the follo
 
 ---
 
+
 ## 🪪 License
 
 This work is licensed under a  
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-![License Badge](license-banner.png)  
-![CC BY-NC-SA](cc-by-nc-sa-badge.png)
+<p float="left">
+  <img src="license-banner.png" width="200"/>
+  <img src="cc-by-nc-sa-badge.png" width="100"/>
+</p>
