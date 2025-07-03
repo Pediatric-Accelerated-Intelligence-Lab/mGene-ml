@@ -16,7 +16,7 @@ BEGIN FacialImageAnalysisPipeline
 IMPORT MachineLearningLibrary
 
 // Step 1: Initialize folder structure and preprocess images
-FUNCTION **Initialize()**:
+FUNCTION Initialize():
     createOutputFolderStrucure() // Create required folders
     rescaleImagesAlignLandmarks(): // Rescales and aligns all images in the dataset
     FOR each image IN dataset:
@@ -25,13 +25,13 @@ FUNCTION **Initialize()**:
         SaveLocalBinaryPatterns() // Calculate and save the local binary patterns
 
 // Step 2: Compute features and prepare for cross-validation
-FUNCTION **CalculateFeaturesForCrossValidation()**:
+FUNCTION CalculateFeaturesForCrossValidation():
     CalculateLDAMatrices_CrossValidation() // Create matrices used to calculate the appearance features from local binary patterns 
     FOR each image IN dataset:
         GetFeatures() // Calculate all features including the appearance and geometric features
 
 // Step 3: Perform leave-one-out cross-validation using the calculated features
-FUNCTION **CrossValidate()**:
+FUNCTION CrossValidate():
     Perform Mann Whitney U test for all the features
     For k FROM 1 TO maximum number of features to select:
         Standardize features by removing the mean and scaling to unit variance
@@ -39,7 +39,7 @@ FUNCTION **CrossValidate()**:
         Perform leave-one-out cross-validation using the selected k features
 
 // Step 4: Export the results to an Excel file
-FUNCTION **ExportCrossValidationToExcel()**
+FUNCTION ExportCrossValidationToExcel()
 
 // Main pipeline
 CALL Initialize()
@@ -80,7 +80,7 @@ The following Python packages are required:
 |--------------------|---------------------|----------------------------------|
 | `numpy`            | ≥ 1.19              | Matrix and array operations      |
 | `opencv-python`    | ≥ 4.5               | Image processing                 |
-| `scikit-learn`     | ≥ 0.22              | LDA, cross-validation, SVM       |
+| `scikit-learn`     | ≥ 0.22              | Cross-validation, SVM       |
 | `scipy`            | ≥ 1.4               | Statistical tests (Mann-Whitney) |
 | `pandas`           | ≥ 1.0               | Exporting results to Excel       |
 | `openpyxl`         | ≥ 3.0               | Excel writing support            |
@@ -157,6 +157,6 @@ This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 <p float="left">
-  <img src="license-banner.png" width="200"/>
+  <img src="banner.png" width="200"/>
   <img src="cc-by-nc-sa-badge.png" width="100"/>
 </p>
