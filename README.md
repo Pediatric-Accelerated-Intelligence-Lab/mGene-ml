@@ -1,9 +1,65 @@
 
 # Facial Image Analysis Pipeline
 
-This repository contains a modular pipeline for facial image preprocessing, feature extraction, and classification using Local Binary Patterns (LBP), Generalized Procrustes Analysis, and Linear Discriminant Analysis (LDA).
+This repository contains a modular pipeline for facial image preprocessing, feature extraction, and classification, along with tools for visualizing appearance features and generating average facial representations.
 
 ---
+
+
+---
+
+## 🧩 Main Pipeline Description
+
+```plaintext
+BEGIN FacialImageAnalysisPipeline
+
+IMPORT MachineLearningLibrary
+
+// Step 1: Initialize folder structure and preprocess images
+FUNCTION Initialize():
+    createOutputFolderStrucure() // Create required folders
+    rescaleImagesAlignLandmarks(): // Rescales and aligns all images in the dataset
+    FOR each image IN dataset:
+        Convert RGB image to grayscale image
+        normalizeImageAndLandmarks() // Generalized Procrustes Analysis for single image. Output is aligned and cropped face region with 150x150 resolution
+        SaveLocalBinaryPatterns() // Calculate and save the local binary patterns
+
+// Step 2: Compute features and prepare for cross-validation
+FUNCTION CalculateFeaturesForCrossValidation():
+    CalculateLDAMatrices_CrossValidation() // Create matrices used to calculate the appearance features from local binary patterns 
+    FOR each image IN dataset:
+        GetFeatures() // Calculate all features including the appearance and geometric features
+
+// Step 3: Perform leave-one-out cross-validation using the calculated features
+FUNCTION CrossValidate():
+    Perform Mann Whitney U test for all the features
+    For k FROM 1 TO maximum number of features to select:
+        Standardize features by removing the mean and scaling to unit variance
+        Use Recursive Feature Elimination with a linear SVM model to select k features
+        Perform leave-one-out cross-validation using the selected k features
+
+// Step 4: Export the results to an Excel file
+FUNCTION ExportCrossValidationToExcel()
+
+// Main pipeline
+CALL Initialize()
+CALL CalculateFeaturesForCrossValidation()
+CALL CrossValidate()
+CALL ExportCrossValidationToExcel()
+
+END
+```
+
+---
+
+## 🧪 Other Functions
+
+**Appearance Feature Visualization**  
+- `ExportTextureFeatures.py`: Plots the area around a particular landmark used in the local binary pattern calculation at a specific resolution.
+
+**Average Face Generation**  
+- `CreateStandardizedImages.py`: Generates standardized face images by registering to a reference using landmarks and cropping the face region. Optional background removal.  
+- `AverageFace.py`: Constructs an average face from the standardized dataset.
 
 ## 🛠️ Installation Guide
 
