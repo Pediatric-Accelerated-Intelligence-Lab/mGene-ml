@@ -61,6 +61,38 @@ END
 - `CreateStandardizedImages.py`: Generates standardized face images by registering to a reference using landmarks and cropping the face region. Optional background removal.  
 - `AverageFace.py`: Constructs an average face from the standardized dataset.
 
+
+---
+
+## 🧪 Demo
+
+### Data
+
+To demonstrate the capabilities of the software, 20 cases are provided in the `demo_data` folder. These include sickle cell disease cases from the Democratic Republic of the Congo. All patients have consented to the public release of their photos. The cases are divided into two groups:  
+- 10 younger patients (<13 years old)  
+- 10 older patients (>13 years old)
+
+### Results
+
+Expected results are available in the `demo_results` folder. The final pipeline output is stored in `CrossValidation.xlsx` under `/demo_results/Results`. This file contains four sheets:
+- **AllFeatures**: Mean, standard deviation, and Mann-Whitney U test *p*-values for all 73 features (13 geometric + 60 appearance).
+- **CrossValidation**: Leave-one-out cross-validation performance when selecting up to 5 features.
+- **SelectedFeatures**: Ranked list of the selected features (based on aggregate importance scores).
+- **FeatureValues**: Raw feature values for each subject.
+
+### Example Visual Outputs
+
+- **Texture Feature Visualization**: "Texture at center of cupid’s bow" at resolution R1 is included in the `TextureImages` folder.
+- **Average Face**: Standardized images for the 10 older subjects (with background removed) are in `StandardizedImages_olderSCD`. Their average face is also saved in the `demo_results` folder.
+
+### Intermediate Outputs
+
+Other folders contain intermediate outputs. For example, `StandardizedData` holds results from the image alignment and cropping step (Step 1).
+
+### Runtime
+
+Running the complete pipeline on the demo dataset takes approximately **5 minutes**.
+
 ## 🛠️ Installation Guide
 
 ### 📌 Operating System
