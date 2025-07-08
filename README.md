@@ -101,7 +101,7 @@ Running the complete pipeline on the demo dataset takes approximately **5 minute
 - **Windows support:** Not officially tested; may require `pathlib` and `OpenCV` compatibility fixes.
 
 ### 💻 Programming Language
-- **Language:** Python 3.6.9
+- **Language:** Python 3.6.15 
 - **Environment suggestion:** Use a virtual environment (e.g., `venv` or `conda`) to isolate dependencies.
 
 ### 📦 Software Dependencies
@@ -112,18 +112,21 @@ The following Python packages are required:
 |--------------------|---------------------|----------------------------------|
 | `numpy`            | ≥ 1.19              | Matrix and array operations      |
 | `opencv-python`    | ≥ 4.5               | Image processing                 |
-| `scikit-learn`     | ≥ 0.22              | Cross-validation, SVM       |
+| `scikit-learn`     | ≥ 0.22              | Cross-validation, SVM            |
 | `scipy`            | ≥ 1.4               | Statistical tests (Mann-Whitney) |
 | `pandas`           | ≥ 1.0               | Exporting results to Excel       |
 | `openpyxl`         | ≥ 3.0               | Excel writing support            |
 | `matplotlib`       | (optional)          | For visual debugging/plots       |
-
+| `imageio`          |                     |                                  |
+| `xlsxwriter`       |                     |                                  |
+| `scikit-image`     |                     |                                  |
+ 
 #### 🧩 Installation Command
 
 ```bash
 python3.6 -m venv venv
 source venv/bin/activate
-pip install numpy opencv-python scikit-learn scipy pandas openpyxl
+pip install numpy opencv-python scikit-learn scipy pandas openpyxl imageio xlsxwriter matplotlib scikit-image
 ```
 
 ---
